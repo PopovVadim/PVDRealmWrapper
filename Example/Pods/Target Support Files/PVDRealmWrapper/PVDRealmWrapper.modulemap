@@ -1,0 +1,6 @@
+framework module PVDRealmWrapper {
+  umbrella header "PVDRealmWrapper-umbrella.h"
+
+  export *
+  module * { export * }
+}

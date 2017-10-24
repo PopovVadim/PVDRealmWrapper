@@ -12,14 +12,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2239149FFDD2FB52E999D8F2 /* PVDRealmWrapper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = PVDRealmWrapper.podspec; path = ../PVDRealmWrapper.podspec; sourceTree = "<group>"; };
+		2239149FFDD2FB52E999D8F2 /* PVDRealmWrapper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PVDRealmWrapper.podspec; path = ../PVDRealmWrapper.podspec; sourceTree = "<group>"; };
 		24B105FA117BB5D0A963DDED /* Pods_PVDRealmWrapper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PVDRealmWrapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBDD28339C1B75F28C79884 /* Pods-PVDRealmWrapper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVDRealmWrapper_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PVDRealmWrapper_Tests/Pods-PVDRealmWrapper_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* PVDRealmWrapper_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PVDRealmWrapper_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		67E66747D6860A972C5314BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		BA5E11888D19F756EA38C3B8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		67E66747D6860A972C5314BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BA5E11888D19F756EA38C3B8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EEA68B0ED284D24FD4688A51 /* Pods-PVDRealmWrapper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVDRealmWrapper_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PVDRealmWrapper_Tests/Pods-PVDRealmWrapper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,12 +131,9 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3S4KYJG3GD;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -212,10 +209,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PVDRealmWrapper_Tests/Pods-PVDRealmWrapper_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PVDRealmWrapper/PVDRealmWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PVDRealmWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -339,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EEA68B0ED284D24FD4688A51 /* Pods-PVDRealmWrapper_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 3S4KYJG3GD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -360,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4DBDD28339C1B75F28C79884 /* Pods-PVDRealmWrapper_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 3S4KYJG3GD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

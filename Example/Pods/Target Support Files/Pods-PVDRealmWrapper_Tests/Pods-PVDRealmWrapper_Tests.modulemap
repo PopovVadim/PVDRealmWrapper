@@ -1,0 +1,6 @@
+framework module Pods_PVDRealmWrapper_Tests {
+  umbrella header "Pods-PVDRealmWrapper_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
