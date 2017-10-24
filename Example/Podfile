@@ -1,0 +1,6 @@
+use_frameworks!
+target 'PVDRealmWrapper_Tests' do
+  pod 'PVDRealmWrapper', :path => '../'
+  
+  
+end
