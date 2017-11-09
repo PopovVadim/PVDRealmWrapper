@@ -33,25 +33,41 @@ open class Database {
     
     /**
      */
-    open func save(_ object: Object, update: Bool = true) {
+    open func save(_ object: Object, update: Bool = true, completion: (() -> Void)? = nil) {
         try! realm.write {
             realm.add(object, update: update)
+            try! realm.commitWrite()
+            completion?()
         }
     }
     
     /**
      */
-    open func save(_ objects: [Object], update: Bool = true) {
+    open func save(_ objects: [Object], update: Bool = true, completion: (() -> Void)? = nil) {
         try! realm.write {
             realm.add(objects, update: update)
+            try! realm.commitWrite()
+            completion?()
         }
     }
     
     /**
+     * Daprecated, use save(objects: update: completion: )
+     * Will be removed in future
      */
     open func batchSave(_ objects: [Object], update: Bool = true) {
-        try! realm.write {
-            realm.add(objects, update: update)
+        save(objects, update: update)
+    }
+    
+    /**
+     */
+    open func refreshAll<T: Object>(_ type: T.Type, with objects: [T], completion: (() -> Void)? = nil) throws {
+        let objectsToDelete: Results<T> = fetch(type)
+        try realm.write {
+            realm.delete(objectsToDelete)
+            realm.add(objects, update: false)
+            try realm.commitWrite()
+            completion?()
         }
     }
     
@@ -119,6 +135,16 @@ open class Database {
     open func copy<T: Object> (_ object: T, completion: (T) -> Void) {
         try! realm.write {
             completion(realm.create(T.self, value: object))
+        }
+    }
+    
+    /**
+     */
+    open func write(block: () -> Void, completion: (() -> Void)? = nil) throws {
+        try realm.write {
+            block()
+            try realm.commitWrite()
+            completion?()
         }
     }
 }
