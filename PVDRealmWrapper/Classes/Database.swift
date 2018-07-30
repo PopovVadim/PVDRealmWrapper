@@ -15,7 +15,7 @@ import RealmSwift
 open class Database {
     
     private static var instance: Database!
-    open static var shared: Database {
+    open class var shared: Database {
         get {
             if (instance == nil) {
                 instance = Database()
